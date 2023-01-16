@@ -8,11 +8,15 @@ using namespace std;
 class Pipeauteur
 {
 private:
+    char *name;
+    Pipeauteur * mate;
 public:
     Pipeauteur(string name);
-    void pipeauter();
-
-    char *bunch_of_chars;
+    Pipeauteur(const Pipeauteur& orig);
+    void pipeauter() const;
+    ~Pipeauteur();
+    Pipeauteur * getMate() const;
+    void setMate(Pipeauteur * newMatePtr);
 };
 
 #endif // PIPEAUTEUR_H

@@ -3,8 +3,13 @@
 
 using namespace std;
 
+void foo(Pipeauteur pipeauteur) {
+    pipeauteur.pipeauter();
+}
+
 int main()
 {
+    /*
     cout << "Hello World!" << endl;
     cout << "I said: Hello, World!" << endl;
 
@@ -32,14 +37,37 @@ int main()
     int *array_of_ints = new int[n];
 
     delete[] array_of_ints;
+    */
 
-    Pipeauteur *my_objptr__heap = new Pipeauteur();
-    Pipeauteur my_object__stack;
+//    char name1[] = {'n', 'a', 'm', 'e', '1', '\0'};
+//    char name2[] = {'n', 'a', 'm', 'e', '2', '\0'};
+//    string name1 = "name1";
+//    string name2 = "name2";
 
-    my_objptr__heap->pipeauter();
-    my_object__stack.pipeauter();
+//    Pipeauteur * my_objptr__heap = new Pipeauteur(name1);
+//    Pipeauteur my_object__stack(name2);
 
-    delete my_objptr__heap;
+//    my_objptr__heap->pipeauter();
+//    my_object__stack.pipeauter();
 
+//    foo(*my_objptr__heap);
+//    foo(my_object__stack);
+
+//    delete my_objptr__heap;
+
+//    Pipeauteur p1("vroom");
+//    Pipeauteur p2 {p1};
+
+//    p1.pipeauter();
+//    p2.pipeauter();
+
+//    const Pipeauteur constPip("Consty McConstFace");
+//    constPip.pipeauter();
+
+    Pipeauteur D("Donald");
+    Pipeauteur M("Marie");
+    Pipeauteur E("Edouard");
+    M.setMate(&D);
+    M.getMate()->pipeauter();
     return 0;
 }

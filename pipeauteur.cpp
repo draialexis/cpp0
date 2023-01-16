@@ -2,23 +2,52 @@
 #include <iostream>
 #include <string.h>
 #include <stdlib.h>
+#include <algorithm>
 
 using namespace std;
 
-Pipeauteur::Pipeauteur(string name)
-{
-    this->bunch_of_chars = new char[strlen(name)];
-
+Pipeauteur::Pipeauteur(string in_name) {
+    name = new char[in_name.length() + 1];
     int i = 0;
-    for (char ch : name) {
-        this->bunch_of_chars[i++] = ch;
+    for(auto ch : in_name) {
+        name[i++] = ch;
     }
-    this->bunch_of_chars[i] = '\0';
+    name[i] = '\0';
+    //    name[0] = 'A';
+    cout << "I live at " << this << endl;
 }
 
-void Pipeauteur::pipeauter() {
-    std::cout << "bleep bloop, my name is ";
-    for(int i = 0; i < bunch_of_chars){
-        std::cout << ch;
+Pipeauteur::Pipeauteur(const Pipeauteur& orig) {
+    char *cptr = orig.name;
+    int size = 0;
+    while(*cptr != '\0') {
+        cptr++;
+        size++;
     }
+
+    name = new char[size + 1];
+
+    cptr = orig.name;
+    int i = 0;
+    while(*cptr != '\0') {
+        name[i++] = *cptr;
+        cptr++;
+    }
+    name[i] = '\0';
+    cout << "I (clone) live at " << this << endl;
+}
+
+Pipeauteur::~Pipeauteur() {
+    cout << "I used to live at " << this << endl;
+    delete [] name;
+}
+
+void Pipeauteur::pipeauter() const {
+    cout << "bleep bloop, my name is " << name << endl;
+}
+
+Pipeauteur * Pipeauteur::getMate() const {return mate;}
+
+void Pipeauteur::setMate(Pipeauteur * newMatePtr) {
+    this->mate = newMatePtr;
 }
