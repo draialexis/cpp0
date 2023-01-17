@@ -9,14 +9,19 @@ class Pipeauteur
 {
 private:
     char *name;
-    Pipeauteur * mate;
+    Pipeauteur *mate;
 public:
-    Pipeauteur(string name);
-    Pipeauteur(const Pipeauteur& orig);
+    explicit Pipeauteur(const string &name);
+
+    Pipeauteur(const Pipeauteur &orig);
+
     void pipeauter() const;
+
     ~Pipeauteur();
-    Pipeauteur * getMate() const;
-    void setMate(Pipeauteur * newMatePtr);
+
+    Pipeauteur *getMate() const;
+
+    void setMate(Pipeauteur *newMatePtr);
 };
 
 #endif // PIPEAUTEUR_H

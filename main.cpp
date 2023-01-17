@@ -1,9 +1,10 @@
 #include <iostream>
-#include "pipeauteur.h"
+#include "headers/pipeauteur.h"
 
 using namespace std;
 
-void foo(Pipeauteur pipeauteur) {
+void foo(Pipeauteur pipeauteur)
+{
     pipeauteur.pipeauter();
 }
 
@@ -15,16 +16,19 @@ int main()
 
     string colors[] = {"green", "blue", "yellow", "red"};
 
-    for(auto i = 0uL; i < sizeof(colors)/sizeof(string) ; ++i) {
+    for (auto i = 0uL; i < sizeof(colors) / sizeof(string); ++i)
+    {
         cout << "color #" << i << ": " << colors[i] << endl;
     }
 
-    for(auto &color : colors) {
+    for (auto &color: colors)
+    {
         color[0] = 'j';
         cout << color << endl;
     }
 
-    for(auto color : colors) {
+    for (auto color: colors)
+    {
         cout << color << endl;
     }
 
@@ -37,32 +41,33 @@ int main()
     int *array_of_ints = new int[n];
 
     delete[] array_of_ints;
+
+
+    char   name1[] = {'n', 'a', 'm', 'e', '1', '\0'};
+    char   name2[] = {'n', 'a', 'm', 'e', '2', '\0'};
+    string name1   = "name1";
+    string name2   = "name2";
+
+    Pipeauteur *my_objptr__heap = new Pipeauteur(name1);
+    Pipeauteur my_object__stack(name2);
+
+    my_objptr__heap->pipeauter();
+    my_object__stack.pipeauter();
+
+    foo(*my_objptr__heap);
+    foo(my_object__stack);
+
+    delete my_objptr__heap;
+
+    Pipeauteur p1("vroom");
+    Pipeauteur p2{p1};
+
+    p1.pipeauter();
+    p2.pipeauter();
+
+    const Pipeauteur constPip("Consty McConstFace");
+    constPip.pipeauter();
     */
-
-//    char name1[] = {'n', 'a', 'm', 'e', '1', '\0'};
-//    char name2[] = {'n', 'a', 'm', 'e', '2', '\0'};
-//    string name1 = "name1";
-//    string name2 = "name2";
-
-//    Pipeauteur * my_objptr__heap = new Pipeauteur(name1);
-//    Pipeauteur my_object__stack(name2);
-
-//    my_objptr__heap->pipeauter();
-//    my_object__stack.pipeauter();
-
-//    foo(*my_objptr__heap);
-//    foo(my_object__stack);
-
-//    delete my_objptr__heap;
-
-//    Pipeauteur p1("vroom");
-//    Pipeauteur p2 {p1};
-
-//    p1.pipeauter();
-//    p2.pipeauter();
-
-//    const Pipeauteur constPip("Consty McConstFace");
-//    constPip.pipeauter();
 
     Pipeauteur D("Donald");
     Pipeauteur M("Marie");

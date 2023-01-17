@@ -5,7 +5,7 @@
 
 class Commercial: public Pipeauteur {
 public:
-    Commercial();
+    explicit Commercial(const string &name);
 };
 
 #endif // COMMERCIAL_H
