@@ -3,9 +3,10 @@
 
 #include "pipeauteur.h"
 
-class Commercial: public Pipeauteur {
+class Commercial : public Pipeauteur
+{
 public:
-    explicit Commercial(const string &name);
+    explicit Commercial(const string &in_name);
 };
 
 #endif // COMMERCIAL_H

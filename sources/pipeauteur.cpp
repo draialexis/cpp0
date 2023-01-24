@@ -4,15 +4,15 @@
 
 using namespace std;
 
-Pipeauteur::Pipeauteur(const string& in_name)
+Pipeauteur::Pipeauteur(const string &in_name)
 {
     name = new char[in_name.length() + 1];
-    int       i = 0;
+    int i = 0;
     for (auto ch: in_name)
     {
         name[i++] = ch;
     }
-    name[i]     = '\0';
+    name[i] = '\0';
     //    name[0] = 'A';
     cout << "I live at " << this << endl;
 }
@@ -20,7 +20,7 @@ Pipeauteur::Pipeauteur(const string& in_name)
 Pipeauteur::Pipeauteur(const Pipeauteur &orig)
 {
     char *cptr = orig.name;
-    int  size  = 0;
+    int size = 0;
     while (*cptr != '\0')
     {
         cptr++;
@@ -30,7 +30,7 @@ Pipeauteur::Pipeauteur(const Pipeauteur &orig)
     name = new char[size + 1];
 
     cptr = orig.name;
-    int i   = 0;
+    int i = 0;
     while (*cptr != '\0')
     {
         name[i++] = *cptr;

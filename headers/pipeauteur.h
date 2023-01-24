@@ -9,9 +9,11 @@ class Pipeauteur
 {
 private:
     char *name;
+
     Pipeauteur *mate;
+
 public:
-    explicit Pipeauteur(const string &name);
+    explicit Pipeauteur(const string &in_name);
 
     Pipeauteur(const Pipeauteur &orig);
 
