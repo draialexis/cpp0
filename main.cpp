@@ -68,12 +68,25 @@ int main()
 
     const Pipeauteur constPip("Consty McConstFace");
     constPip.pipeauter();
-    */
 
     Commercial D("Donald");
     Pipeauteur M("Marie");
     Pipeauteur E("Edouard");
     M.setMate(&D);
     M.getMate()->pipeauter();
+
+    */
+
+//    Pipeauteur dolly_stack("Dolly Stack");
+    auto dolly_heap = new Pipeauteur("Dolly Heap");
+
+//    Pipeauteur clone_stack {dolly_stack};
+    auto clone_heap{dolly_heap};
+
+    dolly_heap->pipeauter();
+    clone_heap->pipeauter();
+
+    cout << "clones are equals: " << (clone_heap == dolly_heap) << endl;
+
     return 0;
 }

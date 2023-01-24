@@ -4,6 +4,10 @@
 
 using namespace std;
 
+/**
+ * An absolute bopper of a ctor
+ * @param in_name
+ */
 Pipeauteur::Pipeauteur(const string &in_name)
 {
     name = new char[in_name.length() + 1];
