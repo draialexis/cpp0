@@ -1,5 +1,6 @@
 #include <iostream>
 #include "headers/pipeauteur.h"
+#include "headers/commercial.h"
 
 using namespace std;
 
@@ -69,7 +70,7 @@ int main()
     constPip.pipeauter();
     */
 
-    Pipeauteur D("Donald");
+    Commercial D("Donald");
     Pipeauteur M("Marie");
     Pipeauteur E("Edouard");
     M.setMate(&D);

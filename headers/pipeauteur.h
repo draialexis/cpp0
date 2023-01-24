@@ -17,7 +17,7 @@ public:
 
     Pipeauteur(const Pipeauteur &orig);
 
-    void pipeauter() const;
+    virtual void pipeauter() const;
 
     ~Pipeauteur();
 

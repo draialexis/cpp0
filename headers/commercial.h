@@ -7,6 +7,8 @@ class Commercial : public Pipeauteur
 {
 public:
     explicit Commercial(const string &in_name);
+
+    void pipeauter() const override;
 };
 
 #endif // COMMERCIAL_H
